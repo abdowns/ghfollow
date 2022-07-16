@@ -1,0 +1,8 @@
+implement debug info with https://docs.github.com/en/rest/rate-limit
+config file
+
+skip users with 1 or more rust repos
+
+https://stackoverflow.com/questions/47502683/github-api-get-total-number-of-users-organizations
+
+distribute across several files
