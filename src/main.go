@@ -7,16 +7,6 @@ import (
 	"time"
 )
 
-// type User struct {
-// 	Login string `json: "login"`
-// 	ID    int    `json: "id"`
-
-// 	FollowersURL string `json: "followers_url"`
-// 	FollowingURL string `json: "following_url"`
-
-// 	Type string `json: "type"`
-// }
-
 type Header struct {
 	Key   string
 	Value string
@@ -26,7 +16,10 @@ func main() {
 	done := make(chan bool)
 	go tick(done)
 
+	// defer WriteSave()
+
 	time.Sleep(time.Second * 15)
+
 }
 
 func tick(done chan bool) {
@@ -51,8 +44,6 @@ func tick(done chan bool) {
 				{"Accept", "application/vnd.github.v3+json"},
 				{"Authorization", fmt.Sprint("token ", conf.Token)},
 			}
-
-			// need to get username from endpoint /user/:ID and then send PUT request to endpoint /user/following/:USERNAME
 
 			user := GetUser(i, conf)
 

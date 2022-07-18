@@ -42,8 +42,6 @@ type User struct {
 }
 
 func GetUser(id int, conf *Config) *User {
-	// make call return pair of result and error rather than just error so it can be reused here
-
 	url := fmt.Sprint("https://api.github.com/user/", fmt.Sprint(id))
 
 	h := []Header{
